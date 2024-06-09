@@ -1,0 +1,6 @@
+/frontend/node_modules/
+/backend/.mvn/
+/backend/target/
+/backend/backend.iml
+/.idea/
+/frontend/build/

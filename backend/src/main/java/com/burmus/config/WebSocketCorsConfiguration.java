@@ -1,0 +1,23 @@
+package com.burmus.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+public class WebSocketCorsConfiguration implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedOrigins("*")
+        .allowCredentials(false)
+                .maxAge(3600)
+                .allowedHeaders("Accept", "Content-Type", "Access-Control-Allow-Headers", "Origin", "x-requested-with",
+                        "Authorization")
+                .exposedHeaders("X-Auth-Token", "Authorization")
+                .allowedMethods("*");
+    }
+
+}
