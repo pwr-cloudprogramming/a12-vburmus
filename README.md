@@ -2,7 +2,7 @@
 
 - Course: *Cloud programming*
 - Group: PN 11.15
-- Date: 08.06
+- Date: 15.06
 
 ## Environment architecture
 ![img.png](imgs/img.png)
