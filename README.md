@@ -46,10 +46,14 @@
      different AWS services.
   - I learned how to integrate different AWS services to build a complete application architecture.
 - What obstacles did you overcome?
-  - I faced challenges in configuring S3 with Terraform due to deprecated functions and IAM policy restrictions. However, I was able to overcome these challenges by researching and finding alternative solutions.
-  - Setting up the RDS instance with Hibernate and configuring Lambda to interact with both RDS and SNS simultaneously was also challenging. I had to troubleshoot issues with Python imports and Lambda layer configuration, but eventually, I resolved them by using VPC endpoints.
+  - I faced challenges in configuring S3 with Terraform due to deprecated functions and IAM policy restrictions.
+> **However, I was able to overcome these challenges by researching and using the `aws_s3_bucket_policy` resource to configure the bucket policy and grant permissions to the frontend code.**
+  - Setting up the RDS instance with Hibernate and configuring Lambda to interact with both RDS and SNS simultaneously was also challenging.
+>  **I debugged connection to the database, firstly tested it from local, then tested from docker containers and then successfully launched it on EC2**
   - Issues with Python imports and layer configurations when integrating Lambda with SNS
-  - Configuring Endpoints for SNS to reach in from VPC
+> **I had to troubleshoot issues with Python imports and Lambda layer configuration, but eventually, I resolved them by using VPC endpoints and layer for Python in AWS Lambda**
+  - When I used instance t2.micro, my application was too slow and it needed more RAM.
+> **So I desided to swich to t2.small, also checked others EC2 options to remind myself EC2 types and configs**
 - What did you help most in overcoming obstacles?
     - Researching AWS documentation, online resources, and community forums helped me understand the best practices and solutions for 
       configuring AWS services with Terraform.
