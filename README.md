@@ -13,6 +13,7 @@
   - SNS topic: Used to send messages to the frontend.
   - VPC Endpoint: Used to allow access to the SNS service from Lambda.
   - Security Group: Used to allow access to the RDS instance from the backend and allow additional traffic to Lambda on 443.
+  - EC2 instance: Used to host the backend code and serve the frontend code.
 ## Preview
  - RDS is used to store the game state. The game state is stored in the game table from backend.
 ![img_1.png](imgs/img_1.png)
@@ -26,8 +27,17 @@
 ![img_5.png](imgs/img_5.png)
 ![img_6.png](imgs/img_6.png)
 ![img_7.png](imgs/img_7.png)
+![img_14.png](imgs/img_14.png)
  - SNS topic is used to send messages to the frontend.
 ![img.png](imgs/img_8.png)
+ - EC2 instance is used to host the backend code and serve the frontend code.
+![img.png](imgs/img_9.png)
+![img.png](imgs/img_10.png)
+- Application is working as expected.
+![img.png](imgs/img_11.png)
+![img.png](imgs/img_12.png)
+- Docker containers on ec2 instance
+![img.png](imgs/img_13.png)
 ## Reflections
 
 - What did you learn?
