@@ -78,13 +78,14 @@ resource "aws_instance" "app" {
 
     sudo apt-get update
     sudo apt-get install -y docker.io
-
-    sudo systemctl start docker
-    sudo systemctl enable docker
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    systemctl start docker
+    systemctl enable docker
 
     IP_V4=$(curl -sS ifconfig.me | awk '{print $1}')
 
-    sudo docker run -d -p 8081:3000 \
+    docker run -d -p 8081:3000 \
     -e REACT_APP_SOCKET=ws://$IP_V4:8080 \
     -e REACT_APP_URL=http://$IP_V4:8080 \
     -e REACT_APP_AWS_PROJECT_REGION=X \
@@ -94,7 +95,7 @@ resource "aws_instance" "app" {
     -e REACT_APP_AWS_USER_POOLS_WEB_CLIENT_ID=X \
     -e REACT_APP_AWS_BUCKET_NAME=X vburmus/frontend:v2
 
-    sudo docker run -d -p 8080:8080 \
+    docker run -d -p 8080:8080 \
     -e COGNITO_URI=X \
     -e DB_URL=X \
     -e DB_USERNAME=X \
